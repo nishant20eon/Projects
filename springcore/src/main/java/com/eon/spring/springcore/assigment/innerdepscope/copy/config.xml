@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean class="com.eon.spring.springcore.assigment.innerdepscope.University" name="university" 
+    				p:clg_id="0177" p:clg_name="Ies college of Technology" scope="prototype">
+    	<property name="st_home">
+    		<bean class="com.eon.spring.springcore.assigment.innerdepscope.Student" 
+    					p:st_Id="0177EC151051" p:st_Name="nishant" p:st_Loc="DSS" />
+    	</property>
+    </bean>   
+</beans>

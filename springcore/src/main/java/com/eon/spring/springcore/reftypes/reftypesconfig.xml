@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+<bean name="scores" class="com.eon.spring.springcore.reftypes.Scores" p:maths="80" p:physics="76" p:chemistry="79"/>
+	<bean name="student" class="com.eon.spring.springcore.reftypes.Student" p:scores-ref="scores"/>
+	<!-- 	<property name="scores">
+			<ref bean="scores"/>  score class bean name
+			</property>
+	</bean>   -->  
+
+   
+</beans>
+
+ 
+<!-- Uses of <Ref>
+
+Way - 01 (Ref as element)
+<bean name="student" class="com.eon.spring.springcore.reftypes.Student">
+		<property name="scores">   
+					Here <property name>=name of dependent varible from student class i.e. private Scores scores means  'scores'
+			<ref bean="scores"/>  
+			        Here ref bean= name of Bean of Score class i.e. 'score' Line no. 11
+		</property>
+</bean>    
+
+Way - 02 (Ref as attribute)
+<property name="scores" ref="scores/">    For explanatation follow line no. 26
+
+Way - 03 (Ref as P schema)
+<bean name="student" class="com.eon.spring.springcore.reftypes.Student" p:variable name of student class-it's type="name of the bean or refrence of the bean"/>
+<bean name="student" class="com.eon.spring.springcore.reftypes.Student" p:scores-ref="scores"/>
+
+					p:scores-ref="scores"
+					
+					Here p:score is name of dependent varible from student class i.e. private Scores scores means  'scores'
+					
+					And ref="scores"
+						Here name of Bean of Score class i.e. 'score' Line no. 11.
+ -->
